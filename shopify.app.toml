@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "53946c9c728a658b1e3ee96d37b97790"
+name = "discount-app-proj"
+application_url = "https://season-owners-qualification-locks.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quick-start-a3e7e688.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_discounts,read_orders,write_customers,write_discounts,write_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://season-owners-qualification-locks.trycloudflare.com/auth/callback",
+  "https://season-owners-qualification-locks.trycloudflare.com/auth/shopify/callback",
+  "https://season-owners-qualification-locks.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false

@@ -1,0 +1,32 @@
+query RunInput {
+  cart {
+    cost {
+      subtotalAmount{
+        amount
+      }
+    }
+    buyerIdentity {
+      customer {
+        email
+        hasTags(tags: ["VIP"]) {
+          hasTag
+          tag
+        }
+      }
+    }
+    lines {
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+        }
+      }
+    }
+  }
+  discountNode {
+    metafield(namespace: "$app:order-discount", key: "function-configuration") {
+      value
+    }
+  }
+}
